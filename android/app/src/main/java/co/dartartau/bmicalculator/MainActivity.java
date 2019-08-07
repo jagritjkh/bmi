@@ -1,4 +1,4 @@
-package co.appbrewery.bmicalculator;
+package co.dartartau.bmicalculator;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
