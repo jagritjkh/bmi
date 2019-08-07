@@ -19,7 +19,7 @@ class BottomBar extends StatelessWidget {
           ),
         ),
         margin: EdgeInsets.only(top: 10.0),
-        padding: EdgeInsets.symmetric(vertical: 24.0),
+        padding: EdgeInsets.symmetric(vertical: 19.0),
         color: kBottomContainerColor,
         width: double.infinity,
 //        height: kBottomContainerHeight,

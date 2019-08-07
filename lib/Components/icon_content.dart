@@ -14,7 +14,7 @@ class IconContent extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.only(bottom: 12.0),
             child: FittedBox(
               fit: BoxFit.contain,
               child: Icon(icon),
@@ -23,7 +23,7 @@ class IconContent extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.all(4.0),
-          margin: EdgeInsets.symmetric(vertical: 8.0),
+          margin: EdgeInsets.only(bottom: 8.0),
           alignment: Alignment.center,
           color: kBottomContainerColor,
           child: Text(

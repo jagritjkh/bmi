@@ -83,10 +83,11 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
-            child: ReusableCard(
-              colour: kActiveCardColor,
-              cardChild: Column(
+          ReusableCard(
+            colour: kActiveCardColor,
+            cardChild: Padding(
+              padding: EdgeInsets.all(6.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
@@ -159,13 +160,14 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ReusableCard(
-                    colour: kActiveCardColor,
-                    cardChild: Column(
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: ReusableCard(
+                  colour: kActiveCardColor,
+                  cardChild: Padding(
+                    padding: EdgeInsets.all(6.0),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
@@ -215,10 +217,13 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: kActiveCardColor,
-                    cardChild: Column(
+              ),
+              Expanded(
+                child: ReusableCard(
+                  colour: kActiveCardColor,
+                  cardChild: Padding(
+                    padding: EdgeInsets.all(6.0),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
@@ -257,8 +262,8 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           BottomBar(
             onTap: () {
