@@ -37,8 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           ColorizeAnimatedTextKit(
+            textAlign: TextAlign.center,
             alignment: Alignment.center,
-            text: ['BMI CALCULATOR'],
+            text: ['BMI, BMR & Ideal Weight CALCULATOR'],
             colors: [
               Colors.white,
               kBottomContainerColor,

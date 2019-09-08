@@ -15,7 +15,7 @@ class BottomBar extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(fontSize: 18.0),
+            style: TextStyle(fontSize: 20.0),
           ),
         ),
         margin: EdgeInsets.only(top: 10.0),

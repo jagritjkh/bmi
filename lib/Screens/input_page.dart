@@ -32,7 +32,7 @@ class _InputPageState extends State<InputPage> {
         automaticallyImplyLeading: false,
         title: ColorizeAnimatedTextKit(
           alignment: Alignment.center,
-          text: ['BMI CALCULATOR'],
+          text: ['BMI, BMR & Ideal Weight CALCULATOR'],
           colors: [
             Colors.white,
             kBottomContainerColor,
@@ -267,8 +267,11 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomBar(
             onTap: () {
-              CalculatorBrain calc =
-                  CalculatorBrain(height: height, weight: weight);
+              CalculatorBrain calc = CalculatorBrain(
+                  gender: selectedGender,
+                  height: height,
+                  weight: weight,
+                  age: age);
 
               Navigator.push(
                 context,
@@ -276,14 +279,20 @@ class _InputPageState extends State<InputPage> {
                   builder: (context) {
                     return ResultsPage(
                       finalBmi: calc.calculateBmi(),
-                      result: calc.getResult(),
+                      result: calc.getBmiResult(),
                       interpretation: calc.getInterpretation(),
+                      finalBmr: selectedGender == Gender.maleCard
+                          ? calc.calculateBmrMen()
+                          : calc.calculateBmrWomen(),
+                      finalIbw: selectedGender == Gender.maleCard
+                          ? calc.calculateIbwMen()
+                          : calc.calculateIbwWomen(),
                     );
                   },
                 ),
               );
             },
-            text: 'CALCULATE BMI',
+            text: 'CALCULATE',
           )
         ],
       ),

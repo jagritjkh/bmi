@@ -7,40 +7,107 @@ class ResultsPage extends StatelessWidget {
   final String finalBmi;
   final String result;
   final String interpretation;
+  final String finalBmr;
+  final String finalIbw;
 
   ResultsPage(
       {@required this.finalBmi,
       @required this.result,
-      @required this.interpretation});
+      @required this.interpretation,
+      @required this.finalBmr,
+      @required this.finalIbw});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text('Your Result'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'Your Result',
-                style: kFontTextStyle,
+//          Container(
+//            padding: EdgeInsets.symmetric(horizontal: 15.0),
+//            child: Text(
+//              'Your Result',
+//              style: kFontTextStyle,
+//            ),
+//          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: ReusableCard(
+                  colour: kActiveCardColor,
+                  cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(6.0),
+                        margin: EdgeInsets.symmetric(vertical: 8.0),
+                        alignment: Alignment.center,
+                        color: kBottomContainerColor,
+                        child: Text(
+                          "BMR Result",
+                          style: kLabelTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          finalBmr,
+                          style: kFontTextStyle,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
+              Expanded(
+                child: ReusableCard(
+                  colour: kActiveCardColor,
+                  cardChild: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(6.0),
+                        margin: EdgeInsets.symmetric(vertical: 8.0),
+                        alignment: Alignment.center,
+                        color: kBottomContainerColor,
+                        child: Text(
+                          "Ideal Body Weight",
+                          style: kLabelTextStyle,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          finalIbw,
+                          style: kFontTextStyle,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
           Expanded(
-            flex: 5,
+//            flex: 5,
             child: ReusableCard(
               colour: kActiveCardColor,
               cardChild: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.all(6.0),
+                    alignment: Alignment.center,
+                    color: kBottomContainerColor,
+                    child: Text(
+                      "BMI Result",
+                      style: kLabelTextStyle,
+                    ),
+                  ),
                   Text(
                     result.toUpperCase(),
                     style: kResultTextStyle,
@@ -62,7 +129,7 @@ class ResultsPage extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              text: 'RE-CALCULATE BMI'),
+              text: 'RE-CALCULATE'),
         ],
       ),
     );
