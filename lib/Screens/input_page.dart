@@ -166,7 +166,7 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCard(
                   colour: kActiveCardColor,
                   cardChild: Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: EdgeInsets.all(6.01),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
